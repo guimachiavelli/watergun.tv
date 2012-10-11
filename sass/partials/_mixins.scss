@@ -1,0 +1,6 @@
+@mixin titles {
+	font-family: $display-font;
+	font-style: italic;
+	font-weight: 800;
+	color: $primary-color;
+}

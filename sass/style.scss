@@ -1,0 +1,214 @@
+@import 'compass/css3';
+@import 'susy';
+@import 'partials/reset';
+@import 'partials/grid';
+@import 'partials/colors';
+@import 'partials/general';
+@import 'partials/mixins';
+
+html {
+	font-family: $main-font;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	border-bottom: $base-line-height*6 solid $primary-color;
+}
+
+
+body {
+	@include container;
+	padding-top: 5%;
+	color: $text-color;
+}
+
+
+
+#intro {
+	@include span-columns(4);
+	#logo { display: inline }
+	#lettering { float: right }
+}
+
+
+
+.menu li {
+	display: inline;
+	font-size: $base-font-size+2;
+	-webkit-font-smoothing: antialiased;
+	@include titles;
+
+	ul {
+		display: inline;
+	}
+	
+}
+
+#primary-menu {
+	position: relative;
+	@include span-columns(4);
+	text-align: right;
+	margin-bottom: 4px;
+	
+	.second-level {
+		@include span-columns(4 omega);
+		position: absolute; z-index: 1;
+		top: $base-line-height+5; left: 0;
+		background: rgba($primary-color, 0.65);
+		padding: $base-line-height/2 0;
+		
+
+		a { color: #fff }
+
+		li { margin: 0 $base-line-height 0 0 }
+
+		&:after {
+			content: '▴';
+			font-style: normal;
+			position: absolute;
+			top: -13px; right: 290px;
+			color: $primary-color;
+		}
+	}
+
+	li {
+		margin-left: $base-line-height*1.5;
+	}
+
+}
+
+#featured {
+	@include span-columns(4);
+	margin-bottom: $base-line-height*2;
+
+	li  {
+		position: relative;
+		margin-bottom: $base-line-height;
+		@include titles;
+		img { width: 100% }	
+
+		&:hover header {
+			@include opacity(0.9);
+		}
+	}
+
+	header {
+		width: 305px;
+		max-height: 200px;
+		background: rgba($primary-color, 0.65);
+		position: absolute;
+		bottom: 50px; right: 0;
+		padding: $base-line-height;
+		-webkit-font-smoothing: antialiased;
+		@include transition(opacity, 0.3s);
+	}
+	
+	h1 { 
+		font-size: $base-font-size+8;
+		font-weight: 800;
+		color: $complimentary;
+		margin-bottom: $base-line-height;
+	}
+
+	p { font-size: ($base-font-size - 2); }
+	a { color: #fff }
+}
+
+#branding {
+	@include span-columns(4);
+	margin-bottom: $base-line-height*2;
+
+	iframe {
+		@include span-columns(3);
+	}
+	
+	p {
+		@include span-columns(1 omega);
+		@include titles;
+		font-size: $base-font-size+5;
+		line-height: $base-line-height+3;
+		margin-bottom: 25px;
+
+		p:last-child { margin-bottom: 0; }
+	}
+
+}
+
+
+#all-the-work {
+	@include span-columns(3);
+
+	li {
+		@include span-columns(1, 3);
+		@include nth-omega(3n);
+		position: relative;
+		padding-bottom: $base-line-height*3;
+
+		img { width: 100% }
+	}
+	
+	h1 {
+		height: $base-line-height*2;
+		position: absolute;
+		bottom: $base-line-height;
+		@include titles;
+	}
+
+
+}
+
+#latest-blog {
+	@include span-columns(1 omega);
+	
+	& > h1 {
+		@include titles;
+		font-size: $base-font-size+8;
+		margin-bottom: $base-line-height;
+	}
+
+	time {
+		display: block;
+		color: #999;
+		font-size: ($base-font-size - 2);
+		font-weight: 400;
+		margin-bottom: $base-line-height;
+	}
+	header h1 {
+		font-weight: 800;
+	}
+
+	footer {
+		@include titles;
+		margin: $base-line-height 0 $base-line-height*2 0; 
+	}
+
+}
+
+#secondary-nav {
+	@include span-columns(4 omega);
+	min-height: 70px;
+	margin-top: $base-line-height*3;
+	margin-bottom: -$base-line-height*5;
+	color: #fff;
+	background: transparent url(../imgs/footer-gun.gif) no-repeat left center;
+
+	
+	a { color: #fff }
+	nav, ul, li { 
+		display: inline;
+		margin-left: 18px;
+	}
+	li li { font-weight: 400; }
+	
+	.menu { 
+		margin-left: 80px;
+		ul { margin: 0; }
+	}
+	
+	#social {
+		li { 
+			margin-left: 8px;
+			position: relative;
+			top: 8px
+		}
+	}
+}
+
