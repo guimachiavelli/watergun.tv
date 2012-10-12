@@ -111,7 +111,12 @@ html {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 19px;
+  min-height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   border-bottom: 114px solid #00b9ff;
+  position: relative;
 }
 
 body {
@@ -124,6 +129,8 @@ body {
   padding-right: 26px;
   padding-top: 5%;
   color: #505050;
+  height: 100%;
+  min-height: 100%;
 }
 body:after {
   content: "";
@@ -283,24 +290,19 @@ body:after {
   margin-right: 2.60521%;
   display: inline;
 }
-#all-the-work li {
-  width: 30.9973%;
+
+.small-work {
+  width: 23.04609%;
   float: left;
-  margin-right: 3.50404%;
+  margin-right: 2.60521%;
   display: inline;
   position: relative;
   padding-bottom: 57px;
 }
-#all-the-work li:nth-child(3n) {
-  float: right;
-  margin-right: 0;
-  #margin-left: -26px;
-  display: inline;
-}
-#all-the-work li img {
+.small-work img {
   width: 100%;
 }
-#all-the-work h1 {
+.small-work h1 {
   height: 38px;
   position: absolute;
   bottom: 19px;
@@ -349,9 +351,10 @@ body:after {
   margin-right: 0;
   #margin-left: -26px;
   display: inline;
+  width: 955px;
   min-height: 70px;
-  margin-top: 57px;
-  margin-bottom: -95px;
+  position: absolute;
+  bottom: -95px;
   color: #fff;
   background: transparent url(../imgs/footer-gun.gif) no-repeat left center;
 }
@@ -375,4 +378,130 @@ body:after {
   margin-left: 8px;
   position: relative;
   top: 8px;
+}
+
+.home .small-work {
+  width: 30.9973%;
+  float: left;
+  margin-right: 3.50404%;
+  display: inline;
+}
+.home .small-work:nth-child(3n) {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+
+.work #primary-menu .second-level {
+  background-color: #00b9ff;
+}
+.work #all-the-work {
+  width: 100%;
+  margin-top: 57px;
+}
+.work #all-the-work .small-work {
+  width: 23.04609%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+}
+.work #all-the-work .small-work:nth-child(4n) {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+
+#project header h1, #project header h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 800;
+  color: #00b9ff;
+  margin-bottom: 19px;
+}
+#project header h1 {
+  font-size: 32px;
+}
+#project p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 19px;
+  color: #505050;
+}
+#project #content, #project aside {
+  width: 48.69739%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+  margin-top: 19px;
+}
+#project aside {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+#project #credits {
+  color: #00b9ff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+#project #credits a {
+  text-decoration: underline;
+}
+#project #sharing margin
+li {
+  display: inline;
+}
+#project footer {
+  clear: both;
+  padding-top: 19px;
+}
+#project .small-work:last-child {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+
+.js .carousel {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 19px;
+}
+.js .carousel ul {
+  width: 20000em;
+  position: absolute;
+}
+.js .carousel li {
+  float: left;
+  width: 100%;
+}
+.js #gallery {
+  height: 262px;
+}
+.js #gallery li {
+  max-width: 466px;
+}
+.js #featured {
+  height: 450px;
+}
+.js #featured li {
+  max-width: 955px;
+}
+.js #car_nav {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -40px;
+}
+.js #car_nav li {
+  display: inline;
+  float: none;
+  margin-right: 5px;
+}
+.js #car_nav a {
+  color: #00b9ff;
 }

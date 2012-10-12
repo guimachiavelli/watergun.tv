@@ -5,12 +5,16 @@
 @import 'partials/colors';
 @import 'partials/general';
 @import 'partials/mixins';
+@import "compass/utilities/general/clearfix";
 
 html {
 	font-family: $main-font;
 	font-size: $base-font-size;
 	line-height: $base-line-height;
+	min-height: 100%;
+	@include box-sizing('border-box');
 	border-bottom: $base-line-height*6 solid $primary-color;
+	position: relative;
 }
 
 
@@ -18,6 +22,10 @@ body {
 	@include container;
 	padding-top: 5%;
 	color: $text-color;
+	height: 100%;
+	min-height: 100%;	
+	
+	
 }
 
 
@@ -136,14 +144,14 @@ body {
 #all-the-work {
 	@include span-columns(3);
 
-	li {
-		@include span-columns(1, 3);
-		@include nth-omega(3n);
-		position: relative;
-		padding-bottom: $base-line-height*3;
+}
 
-		img { width: 100% }
-	}
+.small-work {
+	@include span-columns(1);
+	position: relative;
+	padding-bottom: $base-line-height*3;
+
+	img { width: 100% }
 	
 	h1 {
 		height: $base-line-height*2;
@@ -151,9 +159,8 @@ body {
 		bottom: $base-line-height;
 		@include titles;
 	}
-
-
 }
+
 
 #latest-blog {
 	@include span-columns(1 omega);
@@ -184,9 +191,10 @@ body {
 
 #secondary-nav {
 	@include span-columns(4 omega);
+	width: 955px;
 	min-height: 70px;
-	margin-top: $base-line-height*3;
-	margin-bottom: -$base-line-height*5;
+	position: absolute;
+	bottom: -$base-line-height*5;
 	color: #fff;
 	background: transparent url(../imgs/footer-gun.gif) no-repeat left center;
 
@@ -210,5 +218,130 @@ body {
 			top: 8px
 		}
 	}
+}
+
+.home  {
+	.small-work { 
+		@include span-columns(1, 3);
+		@include nth-omega(3n);
+	}
+}
+
+.work {
+	
+	#primary-menu .second-level { background-color: $primary-color; }
+
+	#all-the-work {
+		width: 100%;
+		margin-top: $base-line-height*3;
+
+		.small-work {
+			@include span-columns(1, 4);
+			@include nth-omega(4n);
+		}
+
+	}
+
+}
+
+
+#project {
+
+	header {
+		h1, h2 {
+			@include titles;
+			margin-bottom: $base-line-height;
+		}
+
+		h1 {
+			font-size: $base-font-size*2;
+		}
+	}
+
+	p {
+		font-family: $display-font;
+		font-style: italic;
+		font-size: ($base-font-size - 2);
+		margin-bottom: $base-line-height;
+		color: $text-color;
+	}
+
+
+
+	#content, aside {
+		@include span-columns(2);
+		margin-top: $base-line-height;
+	}
+
+	aside {	@include omega;	}
+	
+	#credits { 
+		color: $primary-color;
+		font-family: $display-font;
+		font-style: italic;
+		a { text-decoration: underline }
+	}
+
+	#sharing {
+		margin
+		li { display: inline }
+	}
+
+	footer {
+		clear: both;
+		padding-top: $base-line-height;
+	}
+
+	.small-work:last-child { @include omega; }
+
+
+
+}
+
+.js {
+
+	.carousel {
+		overflow: hidden;
+		position: relative;
+		padding-bottom: $base-line-height;
+
+		ul {
+			width: 20000em;
+			position: absolute;
+		}
+
+		li { 
+			float: left;
+			width: 100%;
+		}
+
+	}
+
+	#gallery {
+		height: 262px;
+		li { max-width: 466px; }
+	}
+
+	#featured {
+		height: 450px;
+
+		li { max-width: 955px; }
+	}
+
+	#car_nav {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		margin-left: -40px;
+
+		li {
+			display: inline;
+			float: none;
+			margin-right: 5px;
+		}
+
+		a { color: $primary-color }
+	}
+
 }
 
