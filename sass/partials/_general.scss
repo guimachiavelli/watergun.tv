@@ -1,8 +1,16 @@
 a {
 	color: $primary-color;
 	text-decoration: none;
-	@include transition(opacity, 0.1s);
-	&:hover { @include opacity(0.5); }
+	
+	figure { background: $primary-color; }
+
+	&, img, p, h1 { @include transition(opacity, 0.2s); }
+
+	&:hover, &:hover img, &:hover h1 { 
+		@include opacity(0.5); 
+	}
 }
+
+img { display: block }
 
 .outline { display: none }

@@ -32,6 +32,7 @@ body {
 
 #intro {
 	@include span-columns(4);
+	img { display: inline }
 	#logo { display: inline }
 	#lettering { float: right }
 }
@@ -150,7 +151,10 @@ body {
 	@include span-columns(1);
 	position: relative;
 	padding-bottom: $base-line-height*3;
-
+	
+	figure { 
+		margin-bottom: 4px;
+	}
 	img { width: 100% }
 	
 	h1 {
@@ -190,14 +194,16 @@ body {
 }
 
 #secondary-nav {
-	@include span-columns(4 omega);
-	width: 955px;
+	
+	width: auto;
+	max-width: 955px;
 	min-height: 70px;
 	position: absolute;
 	bottom: -$base-line-height*5;
 	color: #fff;
 	background: transparent url(../imgs/footer-gun.gif) no-repeat left center;
-
+	
+	img { display: inline }
 	
 	a { color: #fff }
 	nav, ul, li { 
@@ -212,7 +218,8 @@ body {
 	}
 	
 	#social {
-		li { 
+		li {
+			display: inline;
 			margin-left: 8px;
 			position: relative;
 			top: 8px
@@ -283,8 +290,11 @@ body {
 	}
 
 	#sharing {
-		margin
-		li { display: inline }
+		margin-top: -6px;
+		margin-bottom: $base-line-height*2;
+
+		li { display: inline; margin-right: 15px; }
+		.twitter { position: relative; top: 2px; }
 	}
 
 	footer {
@@ -345,3 +355,4 @@ body {
 
 }
 
+@import 'partials/desktop-small';

@@ -93,14 +93,23 @@ input, select {
 a {
   color: #00b9ff;
   text-decoration: none;
-  -webkit-transition: opacity, 0.1s;
-  -moz-transition: opacity, 0.1s;
-  -o-transition: opacity, 0.1s;
-  transition: opacity, 0.1s;
 }
-a:hover {
+a figure {
+  background: #00b9ff;
+}
+a, a img, a p, a h1 {
+  -webkit-transition: opacity, 0.2s;
+  -moz-transition: opacity, 0.2s;
+  -o-transition: opacity, 0.2s;
+  transition: opacity, 0.2s;
+}
+a:hover, a:hover img, a:hover h1 {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
+}
+
+img {
+  display: block;
 }
 
 .outline {
@@ -142,6 +151,9 @@ body:after {
   width: 100%;
   float: left;
   margin-right: 2.60521%;
+  display: inline;
+}
+#intro img {
   display: inline;
 }
 #intro #logo {
@@ -299,6 +311,9 @@ body:after {
   position: relative;
   padding-bottom: 57px;
 }
+.small-work figure {
+  margin-bottom: 4px;
+}
 .small-work img {
   width: 100%;
 }
@@ -346,17 +361,16 @@ body:after {
 }
 
 #secondary-nav {
-  width: 100%;
-  float: right;
-  margin-right: 0;
-  #margin-left: -26px;
-  display: inline;
-  width: 955px;
+  width: auto;
+  max-width: 955px;
   min-height: 70px;
   position: absolute;
   bottom: -95px;
   color: #fff;
   background: transparent url(../imgs/footer-gun.gif) no-repeat left center;
+}
+#secondary-nav img {
+  display: inline;
 }
 #secondary-nav a {
   color: #fff;
@@ -375,6 +389,7 @@ body:after {
   margin: 0;
 }
 #secondary-nav #social li {
+  display: inline;
   margin-left: 8px;
   position: relative;
   top: 8px;
@@ -451,9 +466,17 @@ body:after {
 #project #credits a {
   text-decoration: underline;
 }
-#project #sharing margin
-li {
+#project #sharing {
+  margin-top: -6px;
+  margin-bottom: 38px;
+}
+#project #sharing li {
   display: inline;
+  margin-right: 15px;
+}
+#project #sharing .twitter {
+  position: relative;
+  top: 2px;
 }
 #project footer {
   clear: both;
@@ -504,4 +527,11 @@ li {
 }
 .js #car_nav a {
   color: #00b9ff;
+}
+
+/*  small desktop screens ----------- */
+@media only screen and (max-width: 930px) {
+  #secondary-nav .second-level {
+    display: none;
+  }
 }
