@@ -480,9 +480,94 @@ body:after {
 }
 #project footer {
   clear: both;
-  padding-top: 19px;
+  padding-top: 76px;
 }
 #project .small-work:last-child {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+
+.about .small-work:nth-child(4) {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+.about #latest-works {
+  clear: both;
+  padding-top: 57px;
+}
+
+#reel article, #reel #gallery {
+  margin-top: 57px;
+}
+#reel article {
+  width: 48.69739%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+}
+#reel article p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 800;
+  color: #00b9ff;
+  color: #505050;
+  font-size: 20px;
+  line-height: 28.5px;
+  margin-bottom: 19px;
+}
+#reel #gallery {
+  width: 48.69739%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+
+#watergunners {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+  margin-top: 57px;
+}
+#watergunners h1, #watergunners h2, #watergunners h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 800;
+  color: #00b9ff;
+}
+#watergunners h1 {
+  margin-bottom: 19px;
+}
+#watergunners h2, #watergunners h3 {
+  color: #505050;
+}
+#watergunners hgroup {
+  margin: 9.5px 0 28.5px 0;
+}
+#watergunners hgroup a {
+  color: #505050;
+}
+#watergunners p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  margin-bottom: 19px;
+}
+#watergunners > h1 {
+  font-size: 24px;
+}
+#watergunners li {
+  width: 23.04609%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+}
+#watergunners li:nth-child(4) {
   float: right;
   margin-right: 0;
   #margin-left: -26px;

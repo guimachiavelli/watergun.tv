@@ -152,9 +152,7 @@ body {
 	position: relative;
 	padding-bottom: $base-line-height*3;
 	
-	figure { 
-		margin-bottom: 4px;
-	}
+	figure { margin-bottom: 4px; }
 	img { width: 100% }
 	
 	h1 {
@@ -251,7 +249,6 @@ body {
 
 }
 
-
 #project {
 
 	header {
@@ -299,13 +296,76 @@ body {
 
 	footer {
 		clear: both;
-		padding-top: $base-line-height;
+		padding-top: $base-line-height*4;
 	}
 
 	.small-work:last-child { @include omega; }
 
 
 
+}
+
+.about {
+
+	.small-work {
+		@include nth-omega(4);
+	}
+
+	#latest-works {
+		clear: both;
+		padding-top: $base-line-height*3;
+	}
+}
+
+#reel {
+	article, #gallery { margin-top: $base-line-height*3 }
+
+	article {
+		@include span-columns(2);
+		p { 
+			@include titles;
+			color: $text-color;
+			font-size: $base-font-size+4;
+			line-height: $base-line-height*1.5;
+			margin-bottom: $base-line-height;
+		}
+	}
+
+	#gallery {
+		@include span-columns(2 omega);
+	}
+}
+
+#watergunners {
+	@include span-columns(4 omega);
+	margin-top: $base-line-height*3;
+	
+	h1, h2, h3 { 
+		@include titles;
+	}
+
+	h1 { margin-bottom: $base-line-height; }
+	
+	h2, h3 { color: $text-color }
+
+	hgroup {
+		margin: $base-line-height/2 0 $base-line-height*1.5 0;
+		a { color: $text-color }
+		
+	}
+	
+	p {
+		font-family: $display-font;
+		font-style: italic;
+		margin-bottom: $base-line-height;
+	}
+
+	& > h1 { font-size: $base-font-size*1.5 }
+
+	li {
+		@include span-columns(1);
+		@include nth-omega(4);
+	}
 }
 
 .js {
