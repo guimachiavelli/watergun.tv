@@ -573,6 +573,92 @@ body:after {
   #margin-left: -26px;
   display: inline;
 }
+#watergunners img {
+  width: 100%;
+}
+
+.blog #primary-menu .second-level {
+  background-color: #00b9ff;
+}
+
+#blog-navigation, #posts {
+  margin-top: 76px;
+}
+
+#posts {
+  width: 74.3487%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+}
+#posts > li {
+  margin-bottom: 57px;
+  overflow: hidden;
+  *zoom: 1;
+}
+#posts article {
+  width: 48.69739%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+  width: 82.60608%;
+  margin-right: 0;
+}
+#posts h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 800;
+  color: #00b9ff;
+  font-size: 21px;
+  line-height: 24px;
+}
+#posts p {
+  font-size: 14px;
+  margin-bottom: 19px;
+}
+#posts img {
+  display: block;
+  margin: 19px auto;
+  max-width: 100%;
+}
+#posts time {
+  display: block;
+  color: #999;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 19px;
+}
+#posts #sharing {
+  width: 30.9973%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+  width: 12.82565%;
+}
+
+#blog-navigation {
+  width: 23.04609%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+#blog-navigation h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 800;
+  color: #00b9ff;
+  font-size: 20px;
+  margin-bottom: 19px;
+}
+#blog-navigation a {
+  font-size: 14px;
+  color: #505050;
+}
+#blog-navigation ul {
+  margin-bottom: 38px;
+}
 
 .js .carousel {
   overflow: hidden;
@@ -615,7 +701,7 @@ body:after {
 }
 
 /*  small desktop screens ----------- */
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 1020px) {
   #secondary-nav .second-level {
     display: none;
   }

@@ -173,13 +173,8 @@ body {
 		margin-bottom: $base-line-height;
 	}
 
-	time {
-		display: block;
-		color: #999;
-		font-size: ($base-font-size - 2);
-		font-weight: 400;
-		margin-bottom: $base-line-height;
-	}
+	time { @include blog-dates; }
+
 	header h1 {
 		font-weight: 800;
 	}
@@ -350,8 +345,7 @@ body {
 
 	hgroup {
 		margin: $base-line-height/2 0 $base-line-height*1.5 0;
-		a { color: $text-color }
-		
+		a { color: $text-color }	
 	}
 	
 	p {
@@ -363,8 +357,77 @@ body {
 	& > h1 { font-size: $base-font-size*1.5 }
 
 	li {
-		@include span-columns(1);
+		@include span-columns(1, 4);
 		@include nth-omega(4);
+	}
+
+	img {width: 100%;}
+}
+
+.blog {
+	#primary-menu .second-level { background-color: $primary-color; }
+	
+}
+
+#blog-navigation, #posts {
+	margin-top: $base-line-height*4;
+}
+
+#posts {
+	@include span-columns(3);
+	
+	& > li {
+		margin-bottom: $base-line-height*3;
+		@include clearfix;
+	}
+
+	article {
+		@include span-columns(2);
+		width: space(2)*1.5+gutter(1)*0.5;
+		margin-right: 0;
+	}
+
+	h1 { 
+		@include titles;
+		font-size: $base-font-size+5;
+		line-height: $base-line-height+5;
+	}
+	
+	p {
+		font-size: ($base-font-size - 2);
+		margin-bottom: $base-line-height;
+	}
+
+	img {
+		display: block;
+		margin: $base-line-height auto;
+		max-width: 100%;
+	}
+
+	time { @include blog-dates; }
+
+	#sharing {
+		@include span-columns(1 omega, 3);
+		width: space(1)*0.5;
+	}
+}
+
+#blog-navigation {
+	@include span-columns(1 omega);
+
+	h1 {
+		@include titles;
+		font-size: $base-font-size+4;
+		margin-bottom: $base-line-height;
+	}
+
+	a {
+		font-size: ($base-font-size - 2);
+		color: $text-color;
+	}
+
+	ul {
+		margin-bottom: $base-line-height*2;
 	}
 }
 

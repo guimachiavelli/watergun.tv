@@ -31,7 +31,7 @@ $(document).ready(function() {
 	makeCarousel('gallery');
 
 	//sub-menu on primary navigation
-	if ( !$('body').hasClass('work') ) {
+	if ( !$('body').is('.work, .blog') ) {
 		$('#primary-menu .second-level').hide();
 		$('.work-toggle').click(function() {
 			$('.second-level').fadeToggle('fast');
