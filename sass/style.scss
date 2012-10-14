@@ -366,7 +366,6 @@ body {
 
 .blog {
 	#primary-menu .second-level { background-color: $primary-color; }
-	
 }
 
 #blog-navigation, #posts {
@@ -429,6 +428,46 @@ body {
 	ul {
 		margin-bottom: $base-line-height*2;
 	}
+}
+
+
+.contact {
+	#primary-menu .second-level { background-color: $primary-color; }
+	.small-work {
+		@include nth-omega(4);
+	}
+
+	#latest-works {
+		clear: both;
+		padding-top: $base-line-height*3;
+	}
+
+}
+
+#contact-info {
+	@include span-columns(4 omega);
+	margin-top: $base-line-height*4;
+	font-family: $display-font;
+	font-style: italic;
+	
+	h1, h2 { 
+		font-weight: 800;
+	}
+
+	h1, hgroup, li { margin-bottom: $base-line-height }
+	
+	li { color: $primary-color;	}
+
+	article, aside {
+		@include span-columns(1, 4);
+	}
+
+	aside a { 
+			font-weight: 800; 
+			color: $text-color;
+			display: block;
+			margin-top: $base-line-height;
+		}
 }
 
 .js {

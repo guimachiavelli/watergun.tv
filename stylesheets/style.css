@@ -660,6 +660,52 @@ body:after {
   margin-bottom: 38px;
 }
 
+.contact #primary-menu .second-level {
+  background-color: #00b9ff;
+}
+.contact .small-work:nth-child(4) {
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+}
+.contact #latest-works {
+  clear: both;
+  padding-top: 57px;
+}
+
+#contact-info {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  #margin-left: -26px;
+  display: inline;
+  margin-top: 76px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+#contact-info h1, #contact-info h2 {
+  font-weight: 800;
+}
+#contact-info h1, #contact-info hgroup, #contact-info li {
+  margin-bottom: 19px;
+}
+#contact-info li {
+  color: #00b9ff;
+}
+#contact-info article, #contact-info aside {
+  width: 23.04609%;
+  float: left;
+  margin-right: 2.60521%;
+  display: inline;
+}
+#contact-info aside a {
+  font-weight: 800;
+  color: #505050;
+  display: block;
+  margin-top: 19px;
+}
+
 .js .carousel {
   overflow: hidden;
   position: relative;
