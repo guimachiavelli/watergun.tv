@@ -6,10 +6,13 @@ a {
 
 	&, img, p, h1 { @include transition(opacity, 0.2s); }
 
-	&:hover, &:hover img, &:hover h1 { 
+	&:hover, &:hover img, &:hover h1  { 
 		@include opacity(0.5); 
 	}
 }
+
+strong { font-weight: 800; }
+em { font-style: italic; }
 
 img { display: block }
 
