@@ -43,21 +43,17 @@
 				<li>
 					<a class="work-toggle" href="#">Work</a>
 					<ul class="second-level">
-						<li><a href="works.html">All</a></li>
-						<li><a href="works.html">Music Videos</a></li>
-						<li><a href="works.html">Comercials</a></li>
-						<li><a href="works.html">Film</a></li>
+						<li><a href="<?php echo watergun_url; ?>/project">All</a></li>
+						<li><a href="<?php echo get_term_link( "music-videos", "project-type" ); ?>">Music Videos</a></li>
+						<li><a href="<?php echo get_term_link( "commercials", "project-type" ); ?>">Commercials</a></li>
+						<li><a href="<?php echo get_term_link( "film", "project-type" ); ?>">Film</a></li>
 						<li><a href="<?php echo get_term_link( "labs", "project-type" ); ?>">Labs</a></li>
 					</ul>
 				</li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="blog.html">Blog</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="<?php echo watergun_url; ?>/about">About</a></li>
+				<li><a href="<?php echo watergun_url; ?>/blog">Blog</a></li>
+				<li><a href="<?php echo watergun_url; ?>/contact">Contact</a></li>
 			</ul>
-			
-			
-
-
 		</nav>
 
 

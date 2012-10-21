@@ -126,4 +126,6 @@
 		return $classes;
 	}
 
+	add_action( 'be_gallery_metabox_post_types', 'project_gallery' );
+	function project_gallery( $post_types ) { return array( 'project' ); }
 ?>

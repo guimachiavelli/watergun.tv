@@ -6,11 +6,7 @@
 			<ul>
 
 				<?php
-
-					// The Query
 					$the_query = new WP_Query(array ('post_type' => 'project', 'posts_per_page' => 5, 'project-type' => 'featured') );
-
-					// The Loop
 					while ( $the_query->have_posts() ) : $the_query->the_post();
 				?>
 
@@ -39,14 +35,14 @@
 			<h1 class="outline">About Watergun</h1>
 
 				<?php
-					$latest_blog_posts = new WP_Query(array ("page_id" => "41"));
-					while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post();
-					$home_video = get_post_custom_values('home_video');
+					$branding_page = new WP_Query(array ("page_id" => "41"));
+					while ( $branding_page->have_posts() ) : $branding_page->the_post();
+						$home_video = get_post_custom_values('home_video');
 					
 				?>
 	
-					<iframe src="http://player.vimeo.com/video/<?php echo $home_video[0]; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=00b8ff" width="710" height="400" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-					<?php the_content(); ?>
+						<iframe src="http://player.vimeo.com/video/<?php echo $home_video[0]; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=00b8ff" width="710" height="400" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<?php the_content(); ?>
 
 				<?php endwhile; ?>
 		</section>

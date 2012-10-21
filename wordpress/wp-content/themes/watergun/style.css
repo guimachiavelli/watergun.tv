@@ -513,6 +513,7 @@ body:after {
 }
 #project #credits p {
   font-weight: 400;
+  color: #00b9ff;
 }
 #project #credits a {
   text-decoration: underline;

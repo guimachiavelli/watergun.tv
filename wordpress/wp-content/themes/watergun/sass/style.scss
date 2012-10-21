@@ -298,7 +298,7 @@ body {
 		color: $primary-color;
 		font-family: $display-font;
 		font-style: italic;
-		p { font-weight: 400; }
+		p { font-weight: 400; color: $primary-color; }
 		a { text-decoration: underline }
 	}
 

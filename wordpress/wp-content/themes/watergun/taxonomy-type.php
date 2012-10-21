@@ -24,34 +24,5 @@
 			</ul>
 		</section>
 
-		<section id="latest-blog">
-			<h1><a href="#">Blog</a></h1>
-
-			<ol>
-
-
-				<?php
-					$latest_blog_posts = new WP_Query(array ("post_type" => "post", "posts_per_page" => 2));
-					while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post();
-				?>
-				<li>
-					<article>
-						<header>
-							<h1><?php the_title(); ?></h1>
-							<time datetime="<?php the_time("c"); ?>"><?php the_time("F jS Y"); ?></time>
-						</header>
-						<p><?php the_excerpt(); ?></p>
-						<footer>
-							<a class="read-more" href="<?php the_permalink(); ?>">Read the full post</a>
-						</footer>
-					</article>
-				</li>
-
-				<?php
-					endwhile;
-				?>
-			</ol>
-		</section>
-
 
 <?php get_footer(); ?>

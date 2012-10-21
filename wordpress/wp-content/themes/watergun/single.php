@@ -43,17 +43,22 @@
 						</li>
 
 					</ul>
-					
-					<figure id="gallery" class="carousel">
-						<ul >
-							<li><img src="placeholder/aside1.jpg" alt="making of pictures"></li>
-							<li><img src="placeholder/aside1.jpg" alt="making of pictures"></li>
-							<li><img src="placeholder/aside1.jpg" alt="making of pictures"></li>
-							<li><img src="placeholder/aside1.jpg" alt="making of pictures"></li>
-							<li><img src="placeholder/aside1.jpg" alt="making of pictures"></li>
-						</ul>
-					</figure>
 
+					<?php
+		   				$attachments = contains_attachments($post->ID);	
+						if($attachments) { ?>
+						<figure id="gallery" class="carousel">
+							<ul>
+								<?php
+									foreach ($attachments as $attachment) {
+										echo  '<li>';
+											echo wp_get_attachment_image( $attachment->ID, 'gallery' );
+										echo '</li>';
+									}
+								?>
+							</ul>
+						</figure>
+					<?php } ?>
 					<div id="credits">
 						<?php echo $credits[0]; ?>
 					</div>
@@ -61,46 +66,70 @@
 
 				<footer>
 					<ul>
-						<li class="small-work">
-							<a href="project.html">
-								<article>
-									<h1>Heimlich Maneuver Lorem Ipsum</h1>
-									<figure>
-										<img src="placeholder/allworks1.jpg" alt="Project Name Still">
-									<figure>
-								</article>
-							</a>
-						</li>
-						<li class="small-work">
-							<a href="project.html">
-								<article>
-									<h1>Heimlich Maneuver Lorem Ipsum</h1>
-									<figure>
-										<img src="placeholder/allworks1.jpg" alt="Project Name Still">
-									<figure>
-								</article>
-							</a>
-						</li>
-						<li class="small-work">
-							<a href="project.html">
-								<article>
-									<h1>Heimlich Maneuver Lorem Ipsum</h1>
-									<figure>
-										<img src="placeholder/allworks1.jpg" alt="Project Name Still">
-									<figure>
-								</article>
-							</a>
-						</li>
-						<li class="small-work">
-							<a href="project.html">
-								<article>
-									<h1>Heimlich Maneuver Lorem Ipsum</h1>
-									<figure>
-										<img src="placeholder/allworks1.jpg" alt="Project Name Still">
-									<figure>
-								</article>
-							</a>
-						</li>
+						<?php 
+							$siblings = get_post_siblings(2);
+							$unpublished = 4;
+
+							if (!empty($siblings['next'])) {
+								$next = $siblings['next'];
+								foreach($next as $p) {
+
+						?>
+									<li class="small-work">
+										<a href="<?php the_permalink(); ?>">
+											<article>
+											<h1><?php the_title(); ?></h1>
+												<figure>
+													<?php echo get_the_post_thumbnail($post->ID); ?>
+												<figure>
+											</article>
+										</a>
+									</li>
+						<?php
+									$unpublished -= 1;
+								}
+							}
+
+							if (!empty($siblings['prev'])) {
+								$prev = $siblings['prev'];
+								foreach($prev as $p) {
+
+						?>
+									<li class="small-work">
+										<a href="<?php the_permalink(); ?>">
+											<article>
+											<h1><?php the_title(); ?></h1>
+												<figure>
+													<?php echo get_the_post_thumbnail($post->ID); ?>
+												<figure>
+											</article>
+										</a>
+									</li>
+						<?php
+									$unpublished -= 1;
+								}
+							} 	
+
+							if ($unpublished > 0) {
+								$the_query = new WP_Query(array ('post_type' => 'project', 'posts_per_page' => $unpublished, 'orderby' => 'rand') );
+								while ( $the_query->have_posts() ) : $the_query->the_post();
+						?>
+									<li class="small-work">
+										<a href="<?php the_permalink(); ?>">
+											<article>
+											<h1><?php the_title(); ?></h1>
+												<figure>
+													<?php echo get_the_post_thumbnail($post->ID); ?>
+												<figure>
+											</article>
+										</a>
+									</li>
+
+						<?php
+								endwhile;
+							}
+
+						?>
 					</ul>
 				</footer>
 			</article>
