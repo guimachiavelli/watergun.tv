@@ -1,0 +1,14 @@
+@mixin titles {
+	font-family: $display-font;
+	font-style: italic;
+	font-weight: 800;
+	color: $primary-color;
+}
+
+@mixin blog-dates {
+	display: block;
+	color: lighten($text-color, 45%);
+	font-size: ($base-font-size - 2);
+	font-weight: 400;
+	margin-bottom: $base-line-height;
+}
