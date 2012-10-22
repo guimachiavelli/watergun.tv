@@ -56,20 +56,23 @@
 
 
 	//create post type: Projects
-	get_template_part("register_projects");
+	get_template_part("internal/register_projects");
 
 	//create post type: Watergunners
-	get_template_part("register_watergunners");
+	get_template_part("internal/register_watergunners");
 
 	//create back-end for home page
-	get_template_part("home_meta");
+	get_template_part("internal/home_meta");
 
 	//create back-end for about page
-	get_template_part("about_meta");
+	get_template_part("internal/about_meta");
+
+	//create back-end for about page
+	get_template_part("internal/contact_meta");
 
 
 	//improved get adjacent posts query
-	get_template_part("adjacent_posts");
+	get_template_part("internal/adjacent_posts");
 
 
 

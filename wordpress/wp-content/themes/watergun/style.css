@@ -756,6 +756,9 @@ body:after {
   margin-right: 2.60521%;
   display: inline;
 }
+#contact-info article {
+  color: #00b9ff;
+}
 #contact-info aside {
   max-width: 206px;
 }

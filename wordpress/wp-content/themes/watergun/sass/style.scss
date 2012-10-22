@@ -486,7 +486,10 @@ body {
 	article, aside {
 		@include span-columns(1, 4);
 	}
-
+	
+	article {
+		color: $primary-color;
+	}
 	aside {
 		max-width: 206px;
 	}
