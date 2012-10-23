@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 	<?php
-		if (have_posts()) { 
-			while ( have_posts() ) : the_post(); 
+		$blog_posts = new WP_Query("post_type=post&posts_per_page=4");
+		while ( $blog_posts->have_posts() ) : $blog_posts->the_post();
+
 	?>
 
 		<ul id="posts">
@@ -28,29 +29,15 @@
 					</ul>
 				</aside>
 			</li>
-		<?php 
-				endwhile;
-			}
-		 ?>
+		<?php endwhile; ?>
 
 		</ul>
 
 		<nav id="blog-navigation">
 			<section>
 				<h1>Tags</h1>
-				<?php
-					$terms = get_terms("post_tag");
-					$count = count($terms);
-
-					 if ( $count > 0 ){
-						 foreach ( $terms as $term ) {
-				?>
-					<li><a href="<?php echo watergun_url . "/tag/" . $term->slug; ?>"><?php echo $term->name; ?></a></li>
-				<?php
-						 }
-					 }
-				?>
 				<ul>
+					<?php get_the_tag_list(); ?>
 				</ul>
 			</section>
 
@@ -64,5 +51,4 @@
 
 
 <?php get_footer(); ?>
-
 

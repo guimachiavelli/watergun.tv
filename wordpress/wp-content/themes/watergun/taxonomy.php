@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	
+
 		<section id="all-the-work">
 			<h1 class="outline">All the Works</h1>
 			<ul>

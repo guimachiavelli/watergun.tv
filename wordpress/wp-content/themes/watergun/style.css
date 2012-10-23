@@ -140,7 +140,7 @@ img {
 
 html {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 19px;
   min-height: 100%;
   -webkit-box-sizing: border-box;
@@ -152,8 +152,7 @@ html {
 
 body {
   *zoom: 1;
-  max-width: 955px;
-  _width: 955px;
+  width: 955px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 26px;
@@ -201,7 +200,7 @@ body:after {
   display: inline;
 }
 .menu li .second-level li {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 #primary-menu {
@@ -240,7 +239,7 @@ body:after {
   top: -13px;
   right: 295px;
   color: #01b7fc;
-  font-size: 19px;
+  font-size: 17px;
   -webkit-transform: scale(3, 1.5);
   -moz-transform: scale(3, 1.5);
   -ms-transform: scale(3, 1.5);
@@ -288,14 +287,14 @@ body:after {
   transition: opacity, 0.3s;
 }
 #featured h1 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   color: #fff300;
   margin-bottom: 30px;
 }
 #featured p {
-  font-size: 14px;
-  line-height: 19.2px;
+  font-size: 12px;
+  line-height: 16.8px;
 }
 #featured a {
   color: #fff;
@@ -325,7 +324,7 @@ body:after {
   font-style: italic;
   font-weight: 800;
   color: #00b9ff;
-  font-size: 21px;
+  font-size: 20px;
   line-height: 22px;
   margin-bottom: 25px;
 }
@@ -376,13 +375,13 @@ body:after {
   font-style: italic;
   font-weight: 800;
   color: #00b9ff;
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 19px;
 }
 #latest-blog time {
   display: block;
   color: lightgrey;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   margin-bottom: 19px;
 }
@@ -466,7 +465,7 @@ body:after {
 }
 
 #project {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 24px;
 }
 #project header h1, #project header h2 {
@@ -477,7 +476,7 @@ body:after {
   margin-bottom: 36px;
 }
 #project header h1 {
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 36px;
 }
 #project p {
@@ -567,7 +566,7 @@ body:after {
   font-weight: 800;
   color: #00b9ff;
   color: #606060;
-  font-size: 24px;
+  font-size: 23.1px;
   line-height: 28.5px;
   margin-bottom: 19px;
 }
@@ -612,7 +611,7 @@ body:after {
   letter-spacing: -0.1em;
 }
 #watergunners > h1 {
-  font-size: 30.4px;
+  font-size: 26.6px;
   margin-bottom: 22.8px;
 }
 #watergunners li {
@@ -663,11 +662,11 @@ body:after {
   font-style: italic;
   font-weight: 800;
   color: #00b9ff;
-  font-size: 21px;
+  font-size: 19px;
   line-height: 24px;
 }
 #posts p {
-  font-size: 14px;
+  font-size: 12px;
   margin-bottom: 19px;
 }
 #posts img {
@@ -678,7 +677,7 @@ body:after {
 #posts time {
   display: block;
   color: lightgrey;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   margin-bottom: 19px;
 }
@@ -704,11 +703,11 @@ body:after {
   font-style: italic;
   font-weight: 800;
   color: #00b9ff;
-  font-size: 24px;
+  font-size: 21px;
   margin-bottom: 43.7px;
 }
 #blog-navigation a {
-  font-size: 16px;
+  font-size: 14px;
   color: #606060;
 }
 #blog-navigation ul {
