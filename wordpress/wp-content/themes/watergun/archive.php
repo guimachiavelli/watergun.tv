@@ -1,10 +1,10 @@
 <?php get_header(); ?>
+	<ul id="posts">
 	<?php
 		if (have_posts()) { 
 			while ( have_posts() ) : the_post(); 
 	?>
 
-		<ul id="posts">
 			<li>
 				<article>
 					<header>

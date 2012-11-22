@@ -40,9 +40,12 @@
 			<ul>
 				<?php
 					$all_works = new WP_Query(array ("post_type" => "project", "posts_per_page" => 4) );
+					$counter = 0;
 					while ( $all_works->have_posts() ) : $all_works->the_post();
+						$counter += 1;
 				?>
-				<li class="small-work">
+
+				<li class="small-work <?php if ($counter % 4 == 0) { echo 'fourth'; } ?>">
 					<a href="<?php the_permalink(); ?>">
 						<article>
 							<h1><?php the_title(); ?></h1>

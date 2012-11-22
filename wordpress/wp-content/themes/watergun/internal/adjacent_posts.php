@@ -22,7 +22,7 @@ function get_post_siblings($limit = 2, $date = '') {
             $wpdb->posts p1 
         WHERE 
             p1.post_date < '$date' AND 
-            p1.post_type = 'post' AND 
+            p1.post_type = 'project' AND 
             p1.post_status = 'publish' 
         ORDER by 
             p1.post_date DESC
@@ -39,7 +39,7 @@ function get_post_siblings($limit = 2, $date = '') {
             $wpdb->posts p2 
         WHERE 
             p2.post_date > '$date' AND 
-            p2.post_type = 'post' AND 
+            p2.post_type = 'project' AND 
             p2.post_status = 'publish' 
         ORDER by
             p2.post_date ASC
@@ -51,10 +51,10 @@ function get_post_siblings($limit = 2, $date = '') {
     $i = 0;
     $adjacents = array();
     for( $c = count($p); $i < $c; $i++ )
-        if( $i < $limit )
+        if( $i < 2 )
             $adjacents['prev'][] = $p[$i];
         else
-            $adjacents['next'][] = $p[$i];
+			$adjacents['next'][] = $p[$i];
 
     return $adjacents;
 }

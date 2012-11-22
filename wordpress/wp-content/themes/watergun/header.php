@@ -5,7 +5,6 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
 		<title>
 			<?php
@@ -44,10 +43,7 @@
 					<a class="work-toggle" href="#">Work</a>
 					<ul class="second-level">
 						<li><a href="<?php echo watergun_url; ?>/project">All</a></li>
-						<li><a href="<?php echo get_term_link( "music-videos", "project-type" ); ?>">Music Videos</a></li>
-						<li><a href="<?php echo get_term_link( "commercials", "project-type" ); ?>">Commercials</a></li>
-						<li><a href="<?php echo get_term_link( "film", "project-type" ); ?>">Film</a></li>
-						<li><a href="<?php echo get_term_link( "labs", "project-type" ); ?>">Labs</a></li>
+						<?php wp_list_categories( array('taxonomy' => 'project-type', 'exclude' => 7, 'title_li' => '') ); ?>
 					</ul>
 				</li>
 				<li><a href="<?php echo watergun_url; ?>/about">About</a></li>

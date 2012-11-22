@@ -1,43 +1,62 @@
 <?php get_header(); ?>
-	<?php
-		$blog_posts = new WP_Query("post_type=post&posts_per_page=4");
-		while ( $blog_posts->have_posts() ) : $blog_posts->the_post();
-
-	?>
-
+	<section id="post-listing">
+		<h1 class="outline">Watergun blog posts</h1>
 		<ul id="posts">
-			<li>
-				<article>
-					<header>
-						<h1><?php the_title();  ?></h1>
-						<time datetime="<?php the_time("c"); ?>"><?php the_time("F jS Y"); ?></time>
-					</header>
-					
-					<?php the_content(); ?>
+		<?php
+			$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+			$temp_query = $wp_query;
+			$wp_query = null;
 
-				</article>
+			$wp_query = new WP_Query("post_type=post&posts_per_page=4&paged=" . $paged);
+			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
-				<aside id="sharing">
-					<ul>
-						<li>
-						<iframe src="//www.facebook.com/plugins/like.php?href=<?php urldecode(the_permalink()); ?>&amp;locale=en_US&amp;send=false&amp;layout=box_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;height=90" scrolling="no" style="overflow:hidden; height:90px;" allowTransparency="true"></iframe>
-						</li>
+		?>
+
+				<li>
+					<article>
+						<header>
+							<h1><?php the_title();  ?></h1>
+							<time datetime="<?php the_time("c"); ?>"><?php the_time("F jS Y"); ?></time>
+						</header>
 						
-						<li>
-							<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/twitter-api-announce" data-counturl="http://groups.google.com/group/twitter-api-announce" data-lang="en" data-count="vertical">Tweet</a>
-						</li>
-					</ul>
-				</aside>
-			</li>
-		<?php endwhile; ?>
+						<?php the_content(); ?>
 
-		</ul>
+					</article>
 
+					<aside class="sharing">
+						<ul>
+							<li>
+							<span class="fb-like" data-href="<?php the_permalink(); ?>" data-send="false" data-layout="box_count" data-width="450" data-show-faces="true"></span>
+							</li>
+							
+							<li>
+								<a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php the_permalink(); ?>" data-lang="en" data-count="vertical">Tweet</a>
+								<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+							</li>
+							
+							<li>
+								<div class="g-plusone" data-size="tall" data-href="<?php the_permalink(); ?>"></div>
+								<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+							</li>
+
+						</ul>
+					</aside>
+				</li>
+			<?php endwhile; ?>
+
+			</ul>
+
+			<div id="post-navigation" class="navigation">
+				<p class="previous"><?php previous_posts_link(); ?></p>
+				<p class="next"><?php next_posts_link(); ?></p>
+			</div>
+			<?php $wp_query = $temp_query; ?>
+		</section>
 		<nav id="blog-navigation">
 			<section>
 				<h1>Tags</h1>
 				<ul>
-					<?php get_the_tag_list(); ?>
+					<?php echo get_the_tag_list('<li>','</li><li>','</li>'); ?>
 				</ul>
 			</section>
 
@@ -49,6 +68,14 @@
 			</section>	
 		</nav>
 
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 <?php get_footer(); ?>
 

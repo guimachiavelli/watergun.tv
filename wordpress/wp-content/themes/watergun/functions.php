@@ -3,9 +3,11 @@
 	define("template_url", get_template_directory_uri());
 	define("watergun_url", get_bloginfo("url"));
 
+	//deactivate WordPress function
+	remove_shortcode('gallery', 'gallery_shortcode');
 	add_theme_support( 'post-thumbnails', array('post', 'watergunner', 'project') );  
     set_post_thumbnail_size( 220, 118, true ); // Normal post thumbnails
-    add_image_size( 'featured', 955, 540, true ); // Full size screen
+    add_image_size( 'featured', 955, 450, true ); // Full size screen
     add_image_size( 'gallery', 466, 262, true ); // sidebar gallery size
 
 	/*  Show the post gallery just if it exists  */
@@ -35,7 +37,7 @@
 		}
 		return $classes;
 	}
-	add_filter("body_class", "remove_blog_from_cpt_classes", 10, 2);
+//	add_filter("body_class", "remove_blog_from_cpt_classes", 10, 2);
 
 
 	//Helper function for creating new post types
@@ -70,13 +72,60 @@
 	//create back-end for about page
 	get_template_part("internal/contact_meta");
 
-
 	//improved get adjacent posts query
 	get_template_part("internal/adjacent_posts");
+/**
+ * Load javascripts used by the theme
+ */
+	
+function custom_theme_js(){
+	wp_register_script( 'infinite_scroll',  template_url . '/js/plugins/infinitescroll.js', array('jquery'),null,true );
+	wp_enqueue_script('infinite_scroll');
+}
+add_action('wp_enqueue_scripts', 'custom_theme_js');
 
 
+/**
+ * Infinite Scroll
+ */
+function custom_infinite_scroll_js() {
+     ?>
+    <script>
+	
+    var infinite_scroll = {
+        loading: {
+            img: "<?php echo template_url; ?>/imgs/loading.gif",
+			msgText: "<?php _e( '', 'custom' ); ?>",
+			selector: '.infinite',
+            finishedMsg: "<?php _e( '', 'custom' ); ?>"
+        },
+        "nextSelector":".next a",
+        "navSelector":".navigation",
+        "itemSelector":"li.small-work",
+        "contentSelector":".infinite ul"
+    };
+	jQuery( infinite_scroll.contentSelector ).infinitescroll( infinite_scroll );
+
+    </script>
+    <?php
+}
+add_action( 'wp_footer', 'custom_infinite_scroll_js',100 );
 
 
+/**
+ * If we go beyond the last page and request a page that doesn't exist,
+ * force WordPress to return a 404.
+ * See http://core.trac.wordpress.org/ticket/15770
+ */
+function custom_paged_404_fix( ) {
+    global $wp_query;
+    if ( is_404() || !is_paged() || 0 != count( $wp_query->posts ) )
+        return;
+    $wp_query->set_404();
+    status_header( 404 );
+    nocache_headers();
+}
+add_action( 'wp', 'custom_paged_404_fix' );
 
 
 ?>

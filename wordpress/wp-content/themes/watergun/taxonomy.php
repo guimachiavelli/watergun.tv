@@ -1,13 +1,15 @@
 <?php get_header(); ?>
-
-		<section id="all-the-work">
+asdas
+		<section id="all-the-work" class="infinite">
 			<h1 class="outline">All the Works</h1>
 			<ul>
 				<?php
-					$all_works = new WP_Query(array ("post_type" => "project", "posts_per_page" => 16) );
-					while ( $all_works->have_posts() ) : $all_works->the_post();
+					if ( have_posts() ) { 
+					$counter = 0;
+						while ( have_posts() ) : the_post(); 
+						$counter += 1;
 				?>
-				<li class="small-work">
+				<li class="small-work <?php if ($counter % 4 == 0) { echo 'fourth'; } ?>">
 					<a href="<?php the_permalink(); ?>">
 						<article>
 							<h1><?php the_title(); ?></h1>
@@ -19,9 +21,14 @@
 				</li>
 
 				<?php
-					endwhile;
+						endwhile;
+					}
 				?>
 			</ul>
+			<div class="navigation">
+				<p class="next"><?php next_posts_link(); ?></p>
+				<?php previous_posts_link(); ?>
+			</div>
 		</section>
 
 

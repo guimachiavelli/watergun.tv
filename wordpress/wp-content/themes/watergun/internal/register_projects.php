@@ -44,6 +44,7 @@
 				return $post_id;  
 			} else {
 				update_post_meta($post->ID, "main_video", $_POST["main_video"]);
+				update_post_meta($post->ID, "sub_video", $_POST["sub_video"]);
 				update_post_meta($post->ID, "credits", wpautop($_POST["credits"]));
 			}
 		}
@@ -53,6 +54,7 @@
 	function project_credits_box() {
     	add_meta_box("credits-box", "Credits", "project_credits_options", "project", "normal", "high");
     	add_meta_box("main-video-box", "Main Video", "project_main_video_options", "project", "side", "default");
+    	add_meta_box("sub-video-box", "Youtube Video", "project_sub_video_options", "project", "side", "default");
 	}
 	
 
@@ -71,8 +73,16 @@
 	function project_main_video_options(){
         global $post;  
         if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return $post_id;
-?>  
+?>
 		<input name="main_video" value="<?php echo get_previous_content('main_video', $post->ID); ?>">
+
+<?php
+	}
+	function project_sub_video_options(){
+        global $post;  
+        if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE ) return $post_id;
+?>
+		<input name="sub_video" value="<?php echo get_previous_content('sub_video', $post->ID); ?>">
 
 <?php
 	}

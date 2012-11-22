@@ -1,0 +1,26 @@
+.lt-ie9 {
+
+	#primary-menu {
+		.second-level {	
+			background: $menu-color;
+
+			&:after {
+				top: -10px;
+			}
+
+		}
+
+	}
+
+	#featured {
+		header { background: $menu-color; }
+	}
+
+	#all-the-work, #latest-works  {
+		li.third, li.fourth {
+			margin-right: 0;
+		}
+	}
+}
+
+

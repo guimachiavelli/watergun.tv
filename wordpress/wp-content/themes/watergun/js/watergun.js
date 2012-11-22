@@ -31,10 +31,10 @@ $(document).ready(function() {
 	makeCarousel('gallery');
 
 	//sub-menu on primary navigation
-	if ( !$('body').is('.project, .blog, .contact') ) {
+	if ( !$('body').is('.project') ) {
 		$('#primary-menu .second-level').hide();
 		$('.work-toggle').click(function() {
-			$('.second-level').fadeToggle('fast');
+			$('#primary-menu .second-level').fadeToggle('fast');
 			return false;
 		});
 	}
